@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NWZYKFJ73C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NWZYKFJ73C');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Stack Software | Professional Poker Room Management Platform</title>
+    <meta name="description" content="Short Stack Software - Professional poker room management platform: NFC check-ins, digital waitlists, table management, tournaments, seat assignments, and real-time analytics. Built for serious poker operations.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #c9b037;
+            --primary-light: #ffd700;
+            --dark: #0f1419;
+            --dark-light: #1a1f2e;
+            --text: #333;
+            --text-light: #666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(201, 176, 55, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero img.logo {
+            max-width: 300px;
+            margin: 0 auto 40px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5em, 5vw, 4em);
+            margin-bottom: 25px;
+            font-weight: 800;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2em, 2.5vw, 1.8em);
+            margin-bottom: 30px;
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: clamp(1em, 1.5vw, 1.3em);
+            margin-bottom: 50px;
+            color: #ccc;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--dark);
+            box-shadow: 0 4px 20px rgba(201, 176, 55, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(201, 176, 55, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(201, 176, 55, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .btn-calendar {
+            background: linear-gradient(135deg, #4285f4, #34a853);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 20px rgba(66, 133, 244, 0.4);
+        }
+
+        .btn-calendar:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(66, 133, 244, 0.6);
+        }
+
+        .btn-calendar svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        section h2 {
+            font-size: clamp(2em, 4vw, 3em);
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--dark-light);
+            font-weight: 700;
+        }
+
+        section .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--text-light);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: var(--dark-light);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            background: var(--bg-light);
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .screenshot-item {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .screenshot-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #f0f0f0;
+        }
+
+        .screenshot-caption {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .screenshot-caption h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: var(--dark-light);
+            font-weight: 600;
+        }
+
+        .screenshot-caption p {
+            color: var(--text-light);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: #fff;
+            font-size: 2.5em;
+            font-weight: 300;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Booking Section */
+        .booking {
+            background: linear-gradient(135deg, var(--dark-light) 0%, var(--dark) 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        .booking h2 {
+            color: #fff;
+        }
+
+        .booking .subtitle {
+            color: #ccc;
+        }
+
+        .booking-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 60px;
+            border-radius: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .booking-box h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: var(--primary-light);
+        }
+
+        .booking-box p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        /* Contact Form Section */
+        .contact {
+            background: var(--bg-light);
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 1.05em;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(201, 176, 55, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.2em;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #ccc;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 15px;
+                font-size: 0.9em;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-box {
+                padding: 40px 30px;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">Short Stack Software</a>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
+                <li><a href="#booking">Book Demo</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <img src="logo.png" alt="Short Stack Software Logo" class="logo">
+            <h1>Professional Poker Room Management</h1>
+            <p class="subtitle">Complete, integrated platform for modern poker operations</p>
+            <p>Unified software solution managing every aspect of your poker room: player check-ins, table management, waitlists, tournaments, analytics, and administration. All seamlessly connected in one powerful system.</p>
+            <div class="cta-buttons">
+                <a href="#booking" class="btn btn-primary">Book a Demo</a>
+                <a href="#features" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Complete Software Suite</h2>
+            <p class="subtitle">Seven integrated modules working together as one unified system</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>NFC Player Check-In</h3>
+                    <p>Players tap NFC card for instant check-in/out. Automatic player recognition and history lookup with session tracking.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Waitlist Management</h3>
+                    <p>Digital waitlists with FIFO ordering, automatic seat calling, and support for multiple game types simultaneously.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🪑</div>
+                    <h3>Table Management</h3>
+                    <p>Create and manage unlimited poker tables with visual seat assignments, drag-and-drop player management, and real-time status tracking.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Seat Assignments</h3>
+                    <p>Assign players to specific seat numbers with visual availability tracking and automatic notifications when seats open.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Tournament Management</h3>
+                    <p>Complete tournament system with registration, customizable blind structures, automatic timers, and payout calculations.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Comprehensive player history, session tracking, game preferences, revenue reporting, and real-time dashboard with live stats.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>REST API & Integration</h3>
+                    <p>30+ RESTful API endpoints with complete documentation. Integrate with existing systems and build custom solutions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Enterprise Security</h3>
+                    <p>Role-based access control, SQL injection protection, field whitelisting, and comprehensive audit trails for maximum security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots" id="screenshots">
+        <div class="container">
+            <h2>See It In Action</h2>
+            <p class="subtitle">Real screenshots from the live platform</p>
+            
+            <div class="screenshots-grid">
+                <div class="screenshot-item" onclick="openLightbox('screenshots/index_page.png', 'Unified Dashboard', 'Central hub connecting all modules - Game Management, Player Management, Check-In, Waitlists, Tournaments, and Admin')">
+                    <img src="screenshots/index_page.png" alt="Main dashboard" class="screenshot-image" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h3>Unified Dashboard</h3>
+                        <p>Central hub connecting all modules - Game Management, Player Management, Check-In, Waitlists, Tournaments, and Admin</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-item" onclick="openLightbox('screenshots/player_checkin.png', 'Player Check-In', 'NFC card scanning with real-time tracking of all checked-in players')">
+                    <img src="screenshots/player_checkin.png" alt="Player check-in system" class="screenshot-image" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h3>Player Check-In</h3>
+                        <p>NFC card scanning with real-time tracking of all checked-in players</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-item" onclick="openLightbox('screenshots/game_manager.png', 'Game & Table Management', 'Visual seat assignments, drag-and-drop player management, integrated waitlist display')">
+                    <img src="screenshots/game_manager.png" alt="Table management" class="screenshot-image" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h3>Game & Table Management</h3>
+                        <p>Visual seat assignments, drag-and-drop player management, integrated waitlist display</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-item" onclick="openLightbox('screenshots/waitlist_manager.png', 'Waitlist Management', 'FIFO position tracking, one-click seating, multiple game support')">
+                    <img src="screenshots/waitlist_manager.png" alt="Waitlist management" class="screenshot-image" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h3>Waitlist Management</h3>
+                        <p>FIFO position tracking, one-click seating, multiple game support</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-item" onclick="openLightbox('screenshots/system_admin.png', 'System Administration', 'Complete control over users, security, backups, reports, and system configuration')">
+                    <img src="screenshots/system_admin.png" alt="System administration" class="screenshot-image" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h3>System Administration</h3>
+                        <p>Complete control over users, security, backups, reports, and system configuration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <h2>Book a Demo</h2>
+            <p class="subtitle">See the platform in action with a personalized demonstration</p>
+            
+            <div class="booking-box">
+                <h3>Schedule Your Demo</h3>
+                <p>Choose a time that works for you and we'll show you how our platform can transform your poker room operations.</p>
+                <a href="https://calendar.app.google/Xof7XdVzku36kDxY9" 
+                   target="_blank" 
+                   class="btn btn-calendar">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM5 8V6h14v2H5zm7 5h5v-2h-5v2zm-5 0h3v-2H7v2zm3 4h5v-2h-5v2zm-5 0h3v-2H7v2z"/>
+                    </svg>
+                    Book with Google Calendar
+                </a>
+                <p style="margin-top: 20px; font-size: 0.9em; color: #999;">
+                    Or fill out the contact form below and we'll get back to you
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p class="subtitle">Have questions? We'd love to hear from you</p>
+            
+            <form class="contact-form" action="https://formspree.io/f/mzzwyneg" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="poker-room">Poker Room Name *</label>
+                        <input type="text" id="poker-room" name="poker-room" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tables">Number of Tables</label>
+                    <select id="tables" name="tables">
+                        <option value="">Select...</option>
+                        <option value="1-5">1-5 tables</option>
+                        <option value="6-10">6-10 tables</option>
+                        <option value="11-20">11-20 tables</option>
+                        <option value="20+">20+ tables</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell us about your needs</label>
+                    <textarea id="message" name="message" placeholder="What challenges are you facing? What features are most important to you?"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Short Stack Software</p>
+        <p>Professional poker room management platform for modern operations</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Lightbox functionality
+        function openLightbox(imageSrc, title, description) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            lightboxImage.src = imageSrc;
+            lightboxImage.alt = title;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            // Close if clicking the backdrop or close button
+            if (!event || event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NWZYKFJ73C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NWZYKFJ73C');
+    </script>
+</body>
+</html>
