@@ -11,8 +11,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Short Stack Software | Professional Poker Room Management Platform</title>
-    <meta name="description" content="Short Stack Software - Professional poker room management platform: QR code check-ins via mobile app, digital waitlists, table management, tournaments, seat assignments, and real-time analytics. Built for serious poker operations.">
+    <title>Short Stack Software | Custom Software for Small Businesses</title>
+    <meta name="description" content="Short Stack Software builds custom software for small businesses — from internal tools and web apps to fully automated AI agents. Enterprise-grade solutions at a price that makes sense.">
     <style>
         * {
             margin: 0;
@@ -248,97 +248,240 @@
             margin-right: auto;
         }
 
-        /* Features Section */
-        .features {
+        /* Services Section */
+        .services {
             background: var(--white);
         }
 
-        .features-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
 
-        .feature-card {
+        .service-card {
             background: var(--white);
-            padding: 40px;
+            padding: 50px 40px;
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             border-top: 4px solid var(--primary);
         }
 
-        .feature-card:hover {
+        .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .feature-icon {
+        .service-icon {
             font-size: 3.5em;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .feature-card h3 {
-            font-size: 1.5em;
+        .service-card h3 {
+            font-size: 1.8em;
             margin-bottom: 15px;
             color: var(--dark-light);
         }
 
-        .feature-card p {
+        .service-card > p {
             color: var(--text-light);
             line-height: 1.7;
+            margin-bottom: 30px;
+            font-size: 1.05em;
         }
 
-        /* Screenshots Section */
-        .screenshots {
+        .service-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text);
+            font-size: 0.98em;
+        }
+
+        .service-list li::before {
+            content: '→';
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* Process Section */
+        .process {
             background: var(--bg-light);
         }
 
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--dark);
+            font-size: 1.5em;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            color: var(--dark-light);
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        /* Work / Portfolio Section */
+        .work {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            color: #fff;
+        }
+
+        .work h2 {
+            color: #fff;
+        }
+
+        .work .subtitle {
+            color: #ccc;
+        }
+
+        .work-case {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 20px;
+        }
+
+        .work-case-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .work-case-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(201, 176, 55, 0.15);
+            border: 1px solid rgba(201, 176, 55, 0.4);
+            border-radius: 20px;
+            color: var(--primary-light);
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .work-case-info h3 {
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .work-case-info p {
+            color: #ccc;
+            font-size: 1.05em;
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        .work-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .work-feature {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            padding: 25px;
+            border-top: 3px solid var(--primary);
+        }
+
+        .work-feature h4 {
+            color: var(--primary-light);
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .work-feature p {
+            color: #aaa;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* Screenshots within work section */
         .screenshots-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .screenshot-item {
-            background: var(--white);
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .screenshot-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
 
         .screenshot-image {
             width: 100%;
             height: auto;
             display: block;
-            background: #f0f0f0;
         }
 
         .screenshot-caption {
-            padding: 25px;
-            text-align: center;
+            padding: 20px 25px;
         }
 
         .screenshot-caption h3 {
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            color: var(--dark-light);
+            font-size: 1.1em;
+            margin-bottom: 6px;
+            color: #fff;
             font-weight: 600;
         }
 
         .screenshot-caption p {
-            color: var(--text-light);
-            font-size: 0.95em;
-            line-height: 1.6;
+            color: #aaa;
+            font-size: 0.88em;
+            line-height: 1.5;
         }
 
         /* Lightbox Modal */
@@ -399,27 +542,18 @@
 
         /* Booking Section */
         .booking {
-            background: linear-gradient(135deg, var(--dark-light) 0%, var(--dark) 100%);
-            color: #fff;
+            background: var(--white);
             text-align: center;
         }
 
-        .booking h2 {
-            color: #fff;
-        }
-
-        .booking .subtitle {
-            color: #ccc;
-        }
-
         .booking-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, var(--dark-light) 0%, var(--dark) 100%);
             padding: 60px;
             border-radius: 20px;
             max-width: 700px;
             margin: 0 auto;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
         }
 
         .booking-box h3 {
@@ -429,7 +563,7 @@
         }
 
         .booking-box p {
-            font-size: 1.2em;
+            font-size: 1.15em;
             margin-bottom: 40px;
             color: #ccc;
             line-height: 1.8;
@@ -536,7 +670,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .features-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -550,6 +684,14 @@
 
             .screenshots-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .work-case {
+                padding: 30px 20px;
+            }
+
+            .work-case-header {
+                gap: 15px;
             }
         }
 
@@ -576,10 +718,9 @@
         <div class="container">
             <a href="#" class="logo">Short Stack Software</a>
             <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#railbird">RailBird</a></li>
-                <li><a href="#screenshots">Screenshots</a></li>
-                <li><a href="#booking">Book Demo</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">Our Work</a></li>
+                <li><a href="#booking">Book a Call</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -589,178 +730,198 @@
     <section class="hero">
         <div class="hero-content fade-in">
             <img src="logo.png" alt="Short Stack Software Logo" class="logo">
-            <h1>Professional Poker Room Management</h1>
-            <p class="subtitle">Complete, integrated platform for modern poker operations</p>
-            <p>Unified software solution managing every aspect of your poker room: player check-ins, table management, waitlists, tournaments, analytics, and administration. All seamlessly connected in one powerful system.</p>
+            <h1>Custom Software for Small Business</h1>
+            <p class="subtitle">From simple tools to fully automated AI agents</p>
+            <p>Software that was once out of reach is now within yours. We build exactly what your business needs — no bloated SaaS subscriptions, no forcing your workflow into someone else's product. Just software that works for you.</p>
             <div class="cta-buttons">
-                <a href="#booking" class="btn btn-primary">Book a Demo</a>
-                <a href="#features" class="btn btn-secondary">Learn More</a>
+                <a href="#booking" class="btn btn-primary">Book a Free Call</a>
+                <a href="#services" class="btn btn-secondary">See What We Build</a>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <h2>Complete Software Suite</h2>
-            <p class="subtitle">Integrated modules working together as one unified system</p>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile App Check-In</h3>
-                    <p>Players scan QR codes with RailBird mobile app for instant check-in. Seamless integration with kiosk-based waitlist selection. Automatic player recognition and history tracking.</p>
+            <h2>What We Build</h2>
+            <p class="subtitle">Two core offerings — from custom web applications to intelligent agents that run your operations around the clock</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <h3>Software Suites</h3>
+                    <p>Custom web applications and management platforms built around how your business actually works. Stop paying for features you don't need and fighting with tools that almost fit.</p>
+                    <ul class="service-list">
+                        <li>Internal dashboards and operations tools</li>
+                        <li>Customer-facing portals and booking systems</li>
+                        <li>Inventory, scheduling, and workflow management</li>
+                        <li>Mobile-ready web apps for your team or customers</li>
+                        <li>Integrations with the tools you already use</li>
+                        <li>REST APIs to connect everything together</li>
+                    </ul>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3>Waitlist Management</h3>
-                    <p>Digital waitlists with FIFO ordering, automatic seat calling, and support for multiple game types simultaneously.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🪑</div>
-                    <h3>Table Management</h3>
-                    <p>Create and manage unlimited poker tables with visual seat assignments, drag-and-drop player management, and real-time status tracking.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Seat Assignments</h3>
-                    <p>Assign players to specific seat numbers with visual availability tracking and automatic notifications when seats open.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Tournament Management</h3>
-                    <p>Complete tournament system with registration, customizable blind structures, automatic timers, and payout calculations.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Analytics & Reporting</h3>
-                    <p>Comprehensive player history, session tracking, game preferences, revenue reporting, and real-time dashboard with live stats.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🔌</div>
-                    <h3>REST API & Integration</h3>
-                    <p>30+ RESTful API endpoints with complete documentation. Integrate with existing systems and build custom solutions.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🔐</div>
-                    <h3>Enterprise Security</h3>
-                    <p>Role-based access control, SQL injection protection, field whitelisting, and comprehensive audit trails for maximum security.</p>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Agents & Automations</h3>
+                    <p>Intelligent systems that handle the repetitive work so your team can focus on what matters. From automated reporting to AI-powered customer interactions — built and deployed for you.</p>
+                    <ul class="service-list">
+                        <li>Automated data collection and reporting</li>
+                        <li>AI-powered customer intake and triage</li>
+                        <li>Document processing and summarization</li>
+                        <li>Scheduled workflows and business logic automation</li>
+                        <li>Integrations with email, Slack, CRMs, and more</li>
+                        <li>Custom AI agents trained on your business</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- RailBird Section -->
-    <section class="features" id="railbird" style="background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%); color: #fff;">
+    <!-- Process Section -->
+    <section class="process" id="process">
         <div class="container">
-            <h2 style="color: #fff;">RailBird Mobile App</h2>
-            <p class="subtitle" style="color: #ccc;">The companion mobile app for poker players</p>
-            
-            <div class="features-grid" style="margin-top: 40px;">
-                <div class="feature-card" style="background: rgba(255, 255, 255, 0.05); border-top-color: var(--primary-light);">
-                    <div class="feature-icon">📱</div>
-                    <h3 style="color: var(--primary-light);">Session Tracking</h3>
-                    <p style="color: #ccc;">Track your poker sessions with detailed stats, profit/loss tracking, and session history. Monitor your performance over time with comprehensive analytics.</p>
+            <h2>How It Works</h2>
+            <p class="subtitle">A straightforward process from idea to working software</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery Call</h3>
+                    <p>We learn about your business, your pain points, and what you're trying to accomplish. No sales pressure — just an honest conversation.</p>
                 </div>
 
-                <div class="feature-card" style="background: rgba(255, 255, 255, 0.05); border-top-color: var(--primary-light);">
-                    <div class="feature-icon">👥</div>
-                    <h3 style="color: var(--primary-light);">Social Network</h3>
-                    <p style="color: #ccc;">Connect with other players, send friend requests, and coordinate games. Share your activity and see when friends are playing.</p>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Proposal</h3>
+                    <p>We outline exactly what we'll build, how long it'll take, and what it'll cost. Clear scope, fixed price.</p>
                 </div>
 
-                <div class="feature-card" style="background: rgba(255, 255, 255, 0.05); border-top-color: var(--primary-light);">
-                    <div class="feature-icon">📬</div>
-                    <h3 style="color: var(--primary-light);">Messaging</h3>
-                    <p style="color: #ccc;">Private messaging with friends, play notifications, and activity feed. Stay connected with your poker community.</p>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Build</h3>
+                    <p>We build iteratively with your input throughout. You see real progress at every step, not just a final reveal.</p>
                 </div>
 
-                <div class="feature-card" style="background: rgba(255, 255, 255, 0.05); border-top-color: var(--primary-light);">
-                    <div class="feature-icon">📷</div>
-                    <h3 style="color: var(--primary-light);">QR Code Check-In</h3>
-                    <p style="color: #ccc;">Scan QR codes at participating poker rooms to check in instantly. Automatic waitlist selection on kiosk after check-in.</p>
-                </div>
-
-                <div class="feature-card" style="background: rgba(255, 255, 255, 0.05); border-top-color: var(--primary-light);">
-                    <div class="feature-icon">🔔</div>
-                    <h3 style="color: var(--primary-light);">Push Notifications</h3>
-                    <p style="color: #ccc;">Get notified when friends check in, receive friend requests, and stay updated on game coordination opportunities.</p>
-                </div>
-
-                <div class="feature-card" style="background: rgba(255, 255, 255, 0.05); border-top-color: var(--primary-light);">
-                    <div class="feature-icon">🔒</div>
-                    <h3 style="color: var(--primary-light);">Privacy Controls</h3>
-                    <p style="color: #ccc;">Granular privacy settings to control who sees your sessions, check-ins, and activity. Your data, your control.</p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 60px;">
-                <p style="font-size: 1.2em; margin-bottom: 30px; color: #ccc;">
-                    Available on iOS and Android. Download now and start tracking your poker journey.
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://apps.apple.com/app/railbird" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #007AFF, #0051D5);">
-                        📱 Download for iOS
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.railbird.app" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #34A853, #0F9D58);">
-                        🤖 Download for Android
-                    </a>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Launch & Support</h3>
+                    <p>We handle deployment and stick around to make sure everything runs smoothly. Your software, your terms.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Screenshots Section -->
-    <section class="screenshots" id="screenshots">
+    <!-- Our Work Section -->
+    <section class="work" id="work">
         <div class="container">
-            <h2>See It In Action</h2>
-            <p class="subtitle">Real screenshots from the live platform</p>
-            
-            <div class="screenshots-grid">
-                <div class="screenshot-item" onclick="openLightbox('screenshots/index_page.png', 'Unified Dashboard', 'Central hub connecting all modules - Game Management, Player Management, Check-In, Waitlists, Tournaments, and Admin')">
-                    <img src="screenshots/index_page.png" alt="Main dashboard" class="screenshot-image" loading="lazy">
-                    <div class="screenshot-caption">
-                        <h3>Unified Dashboard</h3>
-                        <p>Central hub connecting all modules - Game Management, Player Management, Check-In, Waitlists, Tournaments, and Admin</p>
+            <h2>Our Work</h2>
+            <p class="subtitle">Real software we've built and shipped</p>
+
+            <div class="work-case">
+                <div class="work-case-header">
+                    <div class="work-case-info">
+                        <span class="work-case-tag">Software Suite + Mobile App</span>
+                        <h3>Short Stack / RailBird</h3>
+                        <p>A full-stack poker room management platform paired with a companion mobile app for players. Built from scratch to replace paper waitlists and manual operations — now handling real-time table management, QR-code check-ins, tournaments, analytics, and a social network for players.</p>
                     </div>
                 </div>
 
-                <div class="screenshot-item" onclick="openLightbox('screenshots/player_checkin.png', 'Player Check-In', 'QR code check-in via mobile app with real-time tracking of all checked-in players')">
-                    <img src="screenshots/player_checkin.png" alt="Player check-in system" class="screenshot-image" loading="lazy">
-                    <div class="screenshot-caption">
-                        <h3>Player Check-In</h3>
-                        <p>QR code check-in via mobile app with real-time tracking of all checked-in players</p>
+                <div class="work-features-grid">
+                    <div class="work-feature">
+                        <h4>📱 QR Code Check-In</h4>
+                        <p>Players scan with the RailBird mobile app for instant check-in. Automatic player recognition and history tracking.</p>
+                    </div>
+
+                    <div class="work-feature">
+                        <h4>📋 Waitlist Management</h4>
+                        <p>Digital FIFO waitlists with automatic seat calling and support for multiple game types simultaneously.</p>
+                    </div>
+
+                    <div class="work-feature">
+                        <h4>🪑 Table Management</h4>
+                        <p>Visual seat assignments, drag-and-drop player management, and real-time status tracking across all tables.</p>
+                    </div>
+
+                    <div class="work-feature">
+                        <h4>🏆 Tournament System</h4>
+                        <p>Registration, customizable blind structures, automatic timers, and payout calculations.</p>
+                    </div>
+
+                    <div class="work-feature">
+                        <h4>📊 Analytics & Reporting</h4>
+                        <p>Player history, session tracking, game preferences, revenue reporting, and live dashboard statistics.</p>
+                    </div>
+
+                    <div class="work-feature">
+                        <h4>🔌 REST API</h4>
+                        <p>30+ RESTful API endpoints with complete documentation for integrations and custom extensions.</p>
+                    </div>
+
+                    <div class="work-feature">
+                        <h4>👥 Social Network</h4>
+                        <p>Players connect, share sessions, coordinate games, and receive push notifications through the RailBird app.</p>
+                    </div>
+
+                    <div class="work-feature">
+                        <h4>🔐 Enterprise Security</h4>
+                        <p>Role-based access control, SQL injection protection, and comprehensive audit trails.</p>
                     </div>
                 </div>
 
-                <div class="screenshot-item" onclick="openLightbox('screenshots/game_manager.png', 'Game & Table Management', 'Visual seat assignments, drag-and-drop player management, integrated waitlist display')">
-                    <img src="screenshots/game_manager.png" alt="Table management" class="screenshot-image" loading="lazy">
-                    <div class="screenshot-caption">
-                        <h3>Game & Table Management</h3>
-                        <p>Visual seat assignments, drag-and-drop player management, integrated waitlist display</p>
+                <div class="screenshots-grid">
+                    <div class="screenshot-item" onclick="openLightbox('screenshots/index_page.png', 'Unified Dashboard')">
+                        <img src="screenshots/index_page.png" alt="Main dashboard" class="screenshot-image" loading="lazy">
+                        <div class="screenshot-caption">
+                            <h3>Unified Dashboard</h3>
+                            <p>Central hub connecting all modules</p>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-item" onclick="openLightbox('screenshots/player_checkin.png', 'Player Check-In')">
+                        <img src="screenshots/player_checkin.png" alt="Player check-in system" class="screenshot-image" loading="lazy">
+                        <div class="screenshot-caption">
+                            <h3>Player Check-In</h3>
+                            <p>QR code check-in with real-time tracking</p>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-item" onclick="openLightbox('screenshots/game_manager.png', 'Game & Table Management')">
+                        <img src="screenshots/game_manager.png" alt="Table management" class="screenshot-image" loading="lazy">
+                        <div class="screenshot-caption">
+                            <h3>Game & Table Management</h3>
+                            <p>Visual seat assignments and drag-and-drop management</p>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-item" onclick="openLightbox('screenshots/waitlist_manager.png', 'Waitlist Management')">
+                        <img src="screenshots/waitlist_manager.png" alt="Waitlist management" class="screenshot-image" loading="lazy">
+                        <div class="screenshot-caption">
+                            <h3>Waitlist Management</h3>
+                            <p>FIFO position tracking with one-click seating</p>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-item" onclick="openLightbox('screenshots/system_admin.png', 'System Administration')">
+                        <img src="screenshots/system_admin.png" alt="System administration" class="screenshot-image" loading="lazy">
+                        <div class="screenshot-caption">
+                            <h3>System Administration</h3>
+                            <p>Users, security, backups, and configuration</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="screenshot-item" onclick="openLightbox('screenshots/waitlist_manager.png', 'Waitlist Management', 'FIFO position tracking, one-click seating, multiple game support')">
-                    <img src="screenshots/waitlist_manager.png" alt="Waitlist management" class="screenshot-image" loading="lazy">
-                    <div class="screenshot-caption">
-                        <h3>Waitlist Management</h3>
-                        <p>FIFO position tracking, one-click seating, multiple game support</p>
-                    </div>
-                </div>
-
-                <div class="screenshot-item" onclick="openLightbox('screenshots/system_admin.png', 'System Administration', 'Complete control over users, security, backups, reports, and system configuration')">
-                    <img src="screenshots/system_admin.png" alt="System administration" class="screenshot-image" loading="lazy">
-                    <div class="screenshot-caption">
-                        <h3>System Administration</h3>
-                        <p>Complete control over users, security, backups, reports, and system configuration</p>
+                <div style="text-align: center; margin-top: 40px;">
+                    <p style="font-size: 1.1em; margin-bottom: 25px; color: #ccc;">
+                        RailBird is available for iOS and Android
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://apps.apple.com/app/railbird" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #007AFF, #0051D5);">
+                            📱 Download for iOS
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.railbird.app" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #34A853, #0F9D58);">
+                            🤖 Download for Android
+                        </a>
                     </div>
                 </div>
             </div>
@@ -778,14 +939,14 @@
     <!-- Booking Section -->
     <section class="booking" id="booking">
         <div class="container">
-            <h2>Book a Demo</h2>
-            <p class="subtitle">See the platform in action with a personalized demonstration</p>
-            
+            <h2>Book a Free Call</h2>
+            <p class="subtitle">Tell us what you're trying to build — we'll tell you if we can help</p>
+
             <div class="booking-box">
-                <h3>Schedule Your Demo</h3>
-                <p>Choose a time that works for you and we'll show you how our platform can transform your poker room operations.</p>
-                <a href="https://calendar.app.google/Xof7XdVzku36kDxY9" 
-                   target="_blank" 
+                <h3>Schedule a Discovery Call</h3>
+                <p>30 minutes. No sales pitch. We'll listen to your problem and give you an honest answer about whether custom software makes sense — and what it would take to build it.</p>
+                <a href="https://calendar.app.google/Xof7XdVzku36kDxY9"
+                   target="_blank"
                    class="btn btn-calendar">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM5 8V6h14v2H5zm7 5h5v-2h-5v2zm-5 0h3v-2H7v2zm3 4h5v-2h-5v2zm-5 0h3v-2H7v2z"/>
@@ -793,7 +954,7 @@
                     Book with Google Calendar
                 </a>
                 <p style="margin-top: 20px; font-size: 0.9em; color: #999;">
-                    Or fill out the contact form below and we'll get back to you
+                    Or fill out the form below and we'll reach out to schedule a time
                 </p>
             </div>
         </div>
@@ -803,8 +964,8 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>Get in Touch</h2>
-            <p class="subtitle">Have questions? We'd love to hear from you</p>
-            
+            <p class="subtitle">Have a project in mind? We'd love to hear about it</p>
+
             <form class="contact-form" action="https://formspree.io/f/mzzwyneg" method="POST">
                 <div class="form-row">
                     <div class="form-group">
@@ -813,8 +974,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="poker-room">Poker Room Name *</label>
-                        <input type="text" id="poker-room" name="poker-room" required>
+                        <label for="business">Business Name *</label>
+                        <input type="text" id="business" name="business" required>
                     </div>
                 </div>
 
@@ -831,19 +992,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="tables">Number of Tables</label>
-                    <select id="tables" name="tables">
-                        <option value="">Select...</option>
-                        <option value="1-5">1-5 tables</option>
-                        <option value="6-10">6-10 tables</option>
-                        <option value="11-20">11-20 tables</option>
-                        <option value="20+">20+ tables</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Tell us about your needs</label>
-                    <textarea id="message" name="message" placeholder="What challenges are you facing? What features are most important to you?"></textarea>
+                    <label for="message">Tell us about your project</label>
+                    <textarea id="message" name="message" placeholder="What problem are you trying to solve? What does your current workflow look like? Any ideas about what the solution might be?"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary submit-button">Send Message</button>
@@ -853,8 +1003,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Short Stack Software</p>
-        <p>Professional poker room management platform for modern operations</p>
+        <p>&copy; 2026 Short Stack Software</p>
+        <p>Custom software for small businesses — from simple tools to fully automated AI agents</p>
         <p style="margin-top: 20px;">
             <a href="terms.html" style="color: var(--primary-light); text-decoration: none; margin: 0 15px;">RailBird Terms of Service</a>
             <a href="privacy.html" style="color: var(--primary-light); text-decoration: none; margin: 0 15px;">RailBird Privacy Policy</a>
@@ -887,7 +1037,7 @@
         });
 
         // Lightbox functionality
-        function openLightbox(imageSrc, title, description) {
+        function openLightbox(imageSrc, title) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImage = document.getElementById('lightbox-image');
             lightboxImage.src = imageSrc;
@@ -897,7 +1047,6 @@
         }
 
         function closeLightbox(event) {
-            // Close if clicking the backdrop or close button
             if (!event || event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
                 const lightbox = document.getElementById('lightbox');
                 lightbox.classList.remove('active');
@@ -911,15 +1060,6 @@
                 closeLightbox();
             }
         });
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NWZYKFJ73C"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-NWZYKFJ73C');
     </script>
 </body>
 </html>
