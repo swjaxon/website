@@ -1,0 +1,18 @@
+# robots.txt for shortstacksoftware.io
+#
+# Policy:
+# - Allow all traditional search crawlers (Google, Bing, etc.)
+# - Allow AI answer engines to read and cite the site in real time
+#   (ChatGPT, Claude, Perplexity, Google AI Overviews, etc.)
+# - Opt out of AI training data collection via Cloudflare's Content-Signal
+#
+# Content-Signal definitions (see https://contentsignals.org):
+#   search     = building a search index and serving results
+#   ai-input   = using content as retrieval input for real-time generative answers
+#   ai-train   = training or fine-tuning AI models
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+Sitemap: https://shortstacksoftware.io/sitemap.xml
